@@ -1,10 +1,22 @@
 import express from 'express'
+import cors from 'cors'
 import { bugService } from './services/bug.service.js'
 import { loggerService } from './services/logger.service.js'
 
 const app = express()
 
+const corsOptions = {
+  origin: [
+      'http://127.0.0.1:5173',
+      'http://127.0.0.1:3000',
+      'http://localhost:5173',
+      'http://localhost:3000'
+  ],
+  credentials: true
+}
+
 app.use(express.static('public'))
+app.use(cors(corsOptions))
 
 app.get('/', (req, res) => {
   res.send('Hello there')

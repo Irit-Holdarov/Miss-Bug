@@ -1,9 +1,21 @@
 [
     {
+        "_id": "b101",
+        "title": "Cannot save a Car",
+        "severity": 100,
+        "editAt": 1714634246753
+    },
+    {
         "_id": "b102",
         "title": "Login button not responsive",
-        "severity": 5,
-        "editAt": 1714564900924
+        "severity": 2,
+        "createdAt": 1621456432109
+    },
+    {
+        "_id": "b103",
+        "title": "Missing product images",
+        "severity": 3,
+        "createdAt": 1637825398000
     },
     {
         "_id": "b104",
@@ -24,15 +36,27 @@
         "createdAt": 1645237890000
     },
     {
+        "_id": "b107",
+        "title": "Can't delete the car",
+        "severity": 2,
+        "createdAt": 1625894321000
+    },
+    {
         "_id": "b108",
         "title": "Email notifications not being sent",
         "severity": 4,
         "createdAt": 1630876543000
     },
     {
-        "_id": "3yVsmN",
-        "title": "hi",
-        "severity": 5,
-        "createdAt": 1714564789525
+        "_id": "b109",
+        "title": "Slow page loading times",
+        "severity": 3,
+        "createdAt": 1607543210000
+    },
+    {
+        "_id": "b110",
+        "title": "File upload failing",
+        "severity": 3,
+        "createdAt": 1642801098000
     }
 ]
