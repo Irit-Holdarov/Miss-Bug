@@ -30,8 +30,8 @@ export function BugDetails() {
     return <div className="bug-details container">
         <h3>Bug Details 🐛</h3>
         <h4>{bug.title}</h4>
-        <p>Severity: <span>{bug.severity}</span></p>
-        {bug.description && <p>Description:<span>{bug.description}</span></p>}
+        <h4>Severity: <span>{bug.severity}</span></h4>
+        {bug.description && <h4>Description: <span>{bug.description}</span></h4>}
         <Link to="/bug">Back to List</Link>
     </div>
 

@@ -58,5 +58,12 @@
         "title": "File upload failing",
         "severity": 3,
         "createdAt": 1642801098000
+    },
+    {
+        "_id": "WDDdwT",
+        "title": "Not loading images",
+        "severity": 10,
+        "description": "The app doesn't load the images, some of them come up some of them don't.",
+        "createdAt": 1714646599362
     }
 ]

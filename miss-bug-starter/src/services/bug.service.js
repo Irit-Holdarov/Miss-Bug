@@ -1,4 +1,8 @@
-import axios from 'axios'
+import Axios from 'axios'
+
+var axios = Axios.create({
+    withCredentials: true
+})
 
 const BASE_URL = 'http://localhost:3030/api/bug/'
 
@@ -15,7 +19,7 @@ async function query(filterBy = {}) {
 
     if (filterBy.txt) {
         const regExp = new RegExp(filterBy.txt, 'i')
-        bugs = bugs.filter(bug => regExp.test(bug.title))
+        bugs = bugs.filter(bug => regExp.test(bug.title) || regExp.test(bug.description))
     }
 
     if (filterBy.severity) {
