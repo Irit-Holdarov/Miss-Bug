@@ -3,60 +3,80 @@
     "_id": "b101",
     "title": "Cannot save a Car",
     "severity": 3,
-    "createdAt": 1542107359454
+    "createdAt": 1542107359454,
+    "description": "Error occurs when attempting to save a car record.",
+    "labels": ["critical", "backend-error", "data-loss"]
   },
   {
     "_id": "b102",
     "title": "Login button not responsive",
     "severity": 2,
-    "createdAt": 1621456432109
+    "createdAt": 1621456432109,
+    "description": "User interface issue where the login button is not clickable.",
+    "labels": ["ui-issue", "frontend-error", "accessibility"]
   },
   {
     "_id": "b103",
     "title": "Missing product images",
     "severity": 3,
-    "createdAt": 1637825398000
+    "createdAt": 1637825398000,
+    "description": "Product images are not displayed on the product details page.",
+    "labels": ["frontend-issue", "content-missing", "image-rendering"]
   },
   {
     "_id": "b104",
     "title": "Payment processing error",
     "severity": 4,
-    "createdAt": 1619320754000
+    "createdAt": 1619320754000,
+    "description": "Error occurs during payment processing, preventing transactions.",
+    "labels": ["backend-issue", "payment-error", "transaction-failure"]
   },
   {
     "_id": "b105",
     "title": "Database connection timeout",
     "severity": 5,
-    "createdAt": 1602789512000
+    "createdAt": 1602789512000,
+    "description": "Application fails to establish a connection to the database.",
+    "labels": ["critical", "database-issue", "connectivity"]
   },
   {
     "_id": "b106",
     "title": "Incorrect billing address validation",
     "severity": 2,
-    "createdAt": 1645237890000
+    "createdAt": 1645237890000,
+    "description": "Incorrect validation logic for billing addresses, causing errors during checkout.",
+    "labels": ["frontend-error", "validation-issue", "user-input"]
   },
   {
     "_id": "b107",
     "title": "Can't delete the car",
     "severity": 2,
-    "createdAt": 1625894321000
+    "createdAt": 1625894321000,
+    "description": "User is unable to delete a car record from the system.",
+    "labels": ["backend-error", "data-management", "delete-operation"]
   },
   {
     "_id": "b108",
     "title": "Email notifications not being sent",
     "severity": 4,
-    "createdAt": 1630876543000
+    "createdAt": 1630876543000,
+    "description": "Email notifications fail to send to users upon specific events.",
+    "labels": ["backend-issue", "email-error", "notification-system"]
   },
   {
     "_id": "b109",
     "title": "Slow page loading times",
     "severity": 3,
-    "createdAt": 1607543210000
+    "createdAt": 1607543210000,
+    "description": "Pages take an unusually long time to load, affecting user experience.",
+    "labels": ["performance-issue", "frontend-error", "loading-time"]
   },
   {
     "_id": "b110",
     "title": "File upload failing",
     "severity": 3,
-    "createdAt": 1642801098000
+    "createdAt": 1642801098000,
+    "description": "File uploads fail to complete successfully, interrupting user tasks.",
+    "labels": ["frontend-error", "upload-issue", "file-management"]
   }
 ]

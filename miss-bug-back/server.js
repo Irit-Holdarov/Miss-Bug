@@ -20,6 +20,7 @@ const corsOptions = {
 app.use(express.static('public'))
 app.use(cors(corsOptions))
 app.use(cookieParser())
+app.use(express.json())
 
 app.get('/', (req, res) => {
   res.send('Hello there')
@@ -32,23 +33,6 @@ app.get('/api/bug', async (req, res) => {
   } catch (error) {
     res.status(400).send(`Could'nt get bugs`)
     loggerService.error(`Could'nt get bugs`, error)
-  }
-})
-
-app.get('/api/bug/save', async (req, res) => {
-  try {
-    let bugToSave = {
-      _id: req.query._id,
-      title: req.query.title,
-      severity: +req.query.severity,
-      description: req.query.description
-    }
-    bugToSave = await bugService.save(bugToSave)
-    res.send(bugToSave)
-  }
-  catch (error) {
-    res.status(400).send(`Could'nt save bug`)
-    loggerService.error(`Could'nt save bug`, error)
   }
 })
 
@@ -73,8 +57,36 @@ app.get('/api/bug/:bugId', async (req, res) => {
   }
 })
 
+app.put('/api/bug/:bugId', async (req, res) => {  //update bug
+  const {_id, title, severity, description, labels} = req.body
+  let bugToSave = {_id, title, severity: +severity, description, labels}
+  try {
+    bugToSave = await bugService.save(bugToSave)
+    res.send(bugToSave)
+  }
+  catch (error) {
+    res.status(400).send(`Could'nt save bug`)
+    loggerService.error(`Could'nt save bug`, error)
+  }
+})
 
-app.get('/api/bug/:bugId/remove', async (req, res) => {
+app.post('/api/bug', async (req, res) => {
+  const { title, severity, description, labels} = req.body
+  let bugToSave = { title, severity: +severity, description, labels}
+  try {
+    bugToSave = await bugService.save(bugToSave)
+    res.send(bugToSave)
+  }
+  catch (error) {
+    res.status(400).send(`Could'nt save bug`)
+    loggerService.error(`Could'nt save bug`, error)
+  }
+})
+
+
+
+
+app.delete('/api/bug/:bugId', async (req, res) => {
   try {
     const bugId = req.params.bugId
     await bugService.remove(bugId)
@@ -85,7 +97,6 @@ app.get('/api/bug/:bugId/remove', async (req, res) => {
   }
 })
 
-
 app.get('/api/logs', async (req, res) => {
   res.sendFile(process.cwd() + '/logs/backend.log')
 })
@@ -94,7 +105,6 @@ const port = 3030
 app.listen(port, () =>
   loggerService.info(`Server listening on port http://127.0.0.1:${port}`)
 )
-
 
 const updateVisitedBugs = (bugId, bugLimiter) => {
   const timeout = 7 * 1000
