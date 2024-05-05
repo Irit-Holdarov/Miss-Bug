@@ -1,4 +1,5 @@
 import Axios from 'axios'
+import { parsePath } from 'react-router'
 
 var axios = Axios.create({
     withCredentials: true
@@ -15,8 +16,8 @@ export const bugService = {
 }
 
 async function query(filterBy = {}) {
-    let { data: bugs } = await axios.get(BASE_URL)
-
+    let { data: bugs } = await axios.get(BASE_URL, { params: filterBy })
+    
     if (filterBy.txt) {
         const regExp = new RegExp(filterBy.txt, 'i')
         bugs = bugs.filter(bug => regExp.test(bug.title) || regExp.test(bug.description))
@@ -24,6 +25,10 @@ async function query(filterBy = {}) {
 
     if (filterBy.severity) {
         bugs = bugs.filter(bug => bug.severity === filterBy.severity)
+    }
+
+    if (filterBy.label) {
+        bugs = bugs.filter(bug => bug.labels.includes(filterBy.label))
     }
 
     return bugs
@@ -40,10 +45,14 @@ async function remove(bugId) {
 
 async function save(bug) {
     const method = bug._id ? 'put' : 'post'
-    const { data: savedBug} = await axios[method](BASE_URL + (bug._id || ''), bug)
+    const { data: savedBug } = await axios[method](BASE_URL + (bug._id || ''), bug)
     return savedBug
 }
 
 function getDefaultFilter() {
-    return { txt: '', severity: '' }
+    return {
+        txt: '',
+        severity: '',
+        label: ''
+    }
 }

@@ -20,6 +20,7 @@
 @import "cmps/BugList.css";
 @import "cmps/BugPreview.css";
 @import "cmps/BugDetails.css";
+@import "cmps/BugFilter.css";
 
 
 .main-app {

@@ -13,7 +13,7 @@
     "severity": 2,
     "createdAt": 1621456432109,
     "description": "User interface issue where the login button is not clickable.",
-    "labels": ["ui-issue", "frontend-error", "accessibility"]
+    "labels": ["critical", "user-input", "need-CR"]
   },
   {
     "_id": "b103",
@@ -21,7 +21,7 @@
     "severity": 3,
     "createdAt": 1637825398000,
     "description": "Product images are not displayed on the product details page.",
-    "labels": ["frontend-issue", "content-missing", "image-rendering"]
+    "labels": ["loading-time", "user-input", "need-CR"]
   },
   {
     "_id": "b104",
@@ -29,7 +29,7 @@
     "severity": 4,
     "createdAt": 1619320754000,
     "description": "Error occurs during payment processing, preventing transactions.",
-    "labels": ["backend-issue", "payment-error", "transaction-failure"]
+    "labels": ["backend-error", "data-loss", "critical"]
   },
   {
     "_id": "b105",
@@ -37,7 +37,7 @@
     "severity": 5,
     "createdAt": 1602789512000,
     "description": "Application fails to establish a connection to the database.",
-    "labels": ["critical", "database-issue", "connectivity"]
+    "labels": ["critical", "backend-error", "data-loss"]
   },
   {
     "_id": "b106",
@@ -45,7 +45,7 @@
     "severity": 2,
     "createdAt": 1645237890000,
     "description": "Incorrect validation logic for billing addresses, causing errors during checkout.",
-    "labels": ["frontend-error", "validation-issue", "user-input"]
+    "labels": ["user-input", "backend-error", "delete-operation"]
   },
   {
     "_id": "b107",
@@ -53,7 +53,7 @@
     "severity": 2,
     "createdAt": 1625894321000,
     "description": "User is unable to delete a car record from the system.",
-    "labels": ["backend-error", "data-management", "delete-operation"]
+    "labels": ["delete-operation", "critical", "user-input"]
   },
   {
     "_id": "b108",
@@ -61,7 +61,7 @@
     "severity": 4,
     "createdAt": 1630876543000,
     "description": "Email notifications fail to send to users upon specific events.",
-    "labels": ["backend-issue", "email-error", "notification-system"]
+    "labels": ["critical", "backend-error", "data-loss"]
   },
   {
     "_id": "b109",
@@ -69,7 +69,7 @@
     "severity": 3,
     "createdAt": 1607543210000,
     "description": "Pages take an unusually long time to load, affecting user experience.",
-    "labels": ["performance-issue", "frontend-error", "loading-time"]
+    "labels": ["loading-time", "critical", "need-CR"]
   },
   {
     "_id": "b110",
@@ -77,6 +77,6 @@
     "severity": 3,
     "createdAt": 1642801098000,
     "description": "File uploads fail to complete successfully, interrupting user tasks.",
-    "labels": ["frontend-error", "upload-issue", "file-management"]
+    "labels": ["delete-operation", "user-input", "need-CR"]
   }
 ]

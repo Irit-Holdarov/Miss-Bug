@@ -27,6 +27,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/api/bug', async (req, res) => {
+  console.log(req.query)
   try {
     const bugs = await bugService.query()
     res.send(bugs)
@@ -83,9 +84,6 @@ app.post('/api/bug', async (req, res) => {
   }
 })
 
-
-
-
 app.delete('/api/bug/:bugId', async (req, res) => {
   try {
     const bugId = req.params.bugId
@@ -125,7 +123,7 @@ const updateVisitedBugs = (bugId, bugLimiter) => {
     }
   } else {
     if (Date.now() - bugLimiter.lastVisit > timeout) {
-      bugLimiter.visitedBugs = [bugId]; // Reset the array with the new bugId
+      bugLimiter.visitedBugs = [bugId] // Reset the array with the new bugId
       bugLimiter.lastVisit = Date.now()
     } else if (!bugLimiter.visitedBugs.includes(bugId)) {
       throw new Error('bugLimit Reached')
@@ -134,5 +132,5 @@ const updateVisitedBugs = (bugId, bugLimiter) => {
 
   console.log(`User visited the following bugs: ${bugLimiter.visitedBugs} within the past ${timeout / 1000} seconds`)
   return bugLimiter
-};
+}
 
