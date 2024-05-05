@@ -27,15 +27,18 @@ app.get('/', (req, res) => {
 })
 
 app.get('/api/bug', async (req, res) => {
-  console.log(req.query)
+  const {txt, severity, label} = req.query
+  const filterBy = {txt, severity: +severity, label}
+
   try {
-    const bugs = await bugService.query()
+    const bugs = await bugService.query(filterBy)
     res.send(bugs)
   } catch (error) {
     res.status(400).send(`Could'nt get bugs`)
     loggerService.error(`Could'nt get bugs`, error)
   }
 })
+
 
 app.get('/api/bug/:bugId', async (req, res) => {
   try {

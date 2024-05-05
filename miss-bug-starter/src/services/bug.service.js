@@ -17,20 +17,6 @@ export const bugService = {
 
 async function query(filterBy = {}) {
     let { data: bugs } = await axios.get(BASE_URL, { params: filterBy })
-    
-    if (filterBy.txt) {
-        const regExp = new RegExp(filterBy.txt, 'i')
-        bugs = bugs.filter(bug => regExp.test(bug.title) || regExp.test(bug.description))
-    }
-
-    if (filterBy.severity) {
-        bugs = bugs.filter(bug => bug.severity === filterBy.severity)
-    }
-
-    if (filterBy.label) {
-        bugs = bugs.filter(bug => bug.labels.includes(filterBy.label))
-    }
-
     return bugs
 }
 

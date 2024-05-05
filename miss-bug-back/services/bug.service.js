@@ -9,9 +9,19 @@ export const bugService = {
   save
 }
 
-async function query() {
+async function query(filterBy = {}) {
+  let filteredBugs = [...bugs]
   try {
-    return bugs
+    if (filterBy.txt || filterBy.severity || filterBy.label) {
+      filteredBugs = bugs.filter(bug => {
+        const matchesTxt = !filterBy.txt || new RegExp(filterBy.txt, 'i').test(bug.title)
+        const matchesSeverity = !filterBy.severity || bug.severity === filterBy.severity
+        const matchesLabel = !filterBy.label || bug.labels.includes(filterBy.label)
+
+        return matchesTxt && matchesSeverity && matchesLabel
+      })
+    }
+    return filteredBugs;
   } catch (error) {
     throw error
   }
@@ -40,7 +50,7 @@ async function save(bugToSave) {
   try {
     if (bugToSave._id) {
       const idx = bugs.findIndex(bug => bug._id === bugToSave._id)
-      bugToSave.editAt = Date.now() 
+      bugToSave.editAt = Date.now()
       if (idx < 0) throw `Cant find bug with _id ${bugToSave._id}`
       bugs[idx] = bugToSave
     } else {
