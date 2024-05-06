@@ -27,8 +27,8 @@ app.get('/', (req, res) => {
 })
 
 app.get('/api/bug', async (req, res) => {
-  const {txt, severity, label, sortBy} = req.query
-  const filterBy = {txt, severity: +severity, label, sortBy}
+  const { txt, severity, label, sortBy } = req.query
+  const filterBy = { txt, severity: +severity, label, sortBy }
 
   try {
     const bugs = await bugService.query(filterBy)
@@ -62,8 +62,8 @@ app.get('/api/bug/:bugId', async (req, res) => {
 })
 
 app.put('/api/bug/:bugId', async (req, res) => {  //update bug
-  const {_id, title, severity, description, labels} = req.body
-  let bugToSave = {_id, title, severity: +severity, description, labels}
+  const { _id, title, severity, description, labels } = req.body
+  let bugToSave = { _id, title, severity: +severity, description, labels }
   try {
     bugToSave = await bugService.save(bugToSave)
     res.send(bugToSave)
@@ -75,8 +75,8 @@ app.put('/api/bug/:bugId', async (req, res) => {  //update bug
 })
 
 app.post('/api/bug', async (req, res) => {
-  const { title, severity, description, labels} = req.body
-  let bugToSave = { title, severity: +severity, description, labels}
+  const { title, severity, description, labels } = req.body
+  let bugToSave = { title, severity: +severity, description, labels }
   try {
     bugToSave = await bugService.save(bugToSave)
     res.send(bugToSave)
@@ -107,6 +107,10 @@ app.listen(port, () =>
   loggerService.info(`Server listening on port http://127.0.0.1:${port}`)
 )
 
+app.get('/**', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'))
+})
+
 const updateVisitedBugs = (bugId, bugLimiter) => {
   const timeout = 7 * 1000
 
@@ -136,4 +140,16 @@ const updateVisitedBugs = (bugId, bugLimiter) => {
   console.log(`User visited the following bugs: ${bugLimiter.visitedBugs} within the past ${timeout / 1000} seconds`)
   return bugLimiter
 }
+
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.resolve(__dirname, 'public')))
+} else {
+  const corsOptions = {
+    origin: ['http://127.0.0.1:3000', 'http://localhost:3000'],
+    credentials: true
+  }
+  app.use(cors(corsOptions))
+}
+
 
