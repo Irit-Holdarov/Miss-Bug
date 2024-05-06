@@ -39,6 +39,7 @@ function getDefaultFilter() {
     return {
         txt: '',
         severity: '',
-        label: ''
+        label: '',
+        sortBy: ''
     }
 }

@@ -22,7 +22,7 @@ export function BugFilter({ filterBy, onSetFilterBy }) {
   }
 
 
-  const { txt, severity, label } = filterByToEdit
+  const { txt, severity, label, sortBy } = filterByToEdit
 
   return (
     <section className="bug-filter">
@@ -45,6 +45,16 @@ export function BugFilter({ filterBy, onSetFilterBy }) {
           <option value="loading-time">loading-time</option>
           <option value="user-input">user-input</option>
           <option value="delete-operation">delete-operation</option>
+        </select>
+      </div>
+
+      <div className="sortBy">
+        <label htmlFor="sortBy">Sort By: </label>
+        <select value={sortBy} onChange={handleChange} id="sortBy" name="sortBy">
+          <option value="">Sort By</option>
+          <option value="Title">Title</option>
+          <option value="Severity">Severity</option>
+          <option value="CreatedAt">CreatedAt</option>
         </select>
       </div>
 

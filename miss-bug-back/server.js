@@ -27,8 +27,8 @@ app.get('/', (req, res) => {
 })
 
 app.get('/api/bug', async (req, res) => {
-  const {txt, severity, label} = req.query
-  const filterBy = {txt, severity: +severity, label}
+  const {txt, severity, label, sortBy} = req.query
+  const filterBy = {txt, severity: +severity, label, sortBy}
 
   try {
     const bugs = await bugService.query(filterBy)

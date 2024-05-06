@@ -15,13 +15,28 @@ async function query(filterBy = {}) {
     if (filterBy.txt || filterBy.severity || filterBy.label) {
       filteredBugs = bugs.filter(bug => {
         const matchesTxt = !filterBy.txt || new RegExp(filterBy.txt, 'i').test(bug.title)
-        const matchesSeverity = !filterBy.severity || bug.severity === filterBy.severity
+        const matchesSeverity = !filterBy.severity || bug.severity >= filterBy.severity
         const matchesLabel = !filterBy.label || bug.labels.includes(filterBy.label)
 
         return matchesTxt && matchesSeverity && matchesLabel
       })
     }
-    return filteredBugs;
+
+    if (filterBy.sortBy) {
+      if (filterBy.sortBy === 'Title') {
+        filteredBugs.sort((a, b) => a.title.localeCompare(b.title))
+      } else if (filterBy.sortBy === 'Severity') {
+        filteredBugs.sort((a, b) => a.severity - b.severity)
+      } else if (filterBy.sortBy === 'CreatedAt') {
+        if (filterBy.sortDir === '-1') {
+          filteredBugs.sort((a, b) => b.createdAt - a.createdAt)
+        } else {
+          filteredBugs.sort((a, b) => a.createdAt - b.createdAt)
+        }
+      }
+    }
+
+    return filteredBugs
   } catch (error) {
     throw error
   }

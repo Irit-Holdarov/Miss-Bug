@@ -1,6 +1,6 @@
 import fs from 'fs'
 import fr from 'follow-redirects'
-const { http, https } = fr
+const { https } = fr
 
 
 export const utilService = {
@@ -40,3 +40,4 @@ function makeId(length = 6) {
 
     return txt
 }
+
