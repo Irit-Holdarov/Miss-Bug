@@ -1,0 +1,44 @@
+[
+  {
+    "_id": "u101",
+    "fullname": "Muki Ja",
+    "username": "muki",
+    "password": "muki1234",
+    "score": 100
+  },
+  {
+    "_id": "u102",
+    "fullname": "John Doe",
+    "username": "john",
+    "password": "john1234",
+    "score": 80
+  },
+  {
+    "_id": "u103",
+    "fullname": "Alice Smith",
+    "username": "alice",
+    "password": "alice1234",
+    "score": 95
+  },
+  {
+    "_id": "u104",
+    "fullname": "Emily Brown",
+    "username": "emily",
+    "password": "emily1234",
+    "score": 75
+  },
+  {
+    "_id": "u105",
+    "fullname": "Mike Johnson",
+    "username": "mike",
+    "password": "mike1234",
+    "score": 85
+  },
+  {
+    "_id": "u106",
+    "fullname": "Sophia Williams",
+    "username": "sophia",
+    "password": "sophia1234",
+    "score": 90
+  }
+]

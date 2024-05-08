@@ -1,4 +1,5 @@
-import { utilService } from './util.service.js'
+
+import { utilService } from '../../services/util.service.js'
 import fs from 'fs'
 const bugs = utilService.readJsonFile('data/bug.json')
 
@@ -38,6 +39,7 @@ async function query(filterBy = {}) {
 
     return filteredBugs
   } catch (error) {
+    loggerService.error(`Could'nt get bugs`, error)
     throw error
   }
 }
@@ -47,6 +49,7 @@ async function getById(bugId) {
     const bug = bugs.find(bug => bug._id === bugId)
     return bug
   } catch (error) {
+    loggerService.error(`Could'nt get bug ID`, error)
     throw error
   }
 }
@@ -57,6 +60,7 @@ async function remove(bugId) {
     bugs.splice(bugIdx, 1)
     _saveBugsToFile()
   } catch (error) {
+    loggerService.error(`Could'nt remove bug`, error)
     throw error
   }
 }
@@ -76,6 +80,7 @@ async function save(bugToSave) {
     await _saveBugsToFile()
     return bugToSave
   } catch (error) {
+    loggerService.error(`Could'nt save bug`, error)
     throw error
   }
 }
