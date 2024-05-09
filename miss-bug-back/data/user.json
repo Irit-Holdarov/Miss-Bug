@@ -54,5 +54,33 @@
         "password": "12",
         "score": 5,
         "_id": "TGvwJI"
+    },
+    {
+        "username": "Iritush",
+        "password": "$2b$10$7WWtT9H/Be/cVFAvXx/c5eHRyFeJWIZNQ3kP8SvS2w0bhaIy4gETS",
+        "fullname": "Iritush Hamuda",
+        "_id": "j441aR",
+        "score": 49
+    },
+    {
+        "username": "Irit",
+        "password": "$2b$10$SDHaNgQN1Y9tnSpNZ4if6uAVSW6d7fNEgdKK4ohxZHR2gpF56dYAi",
+        "fullname": "Iritush Hamuda",
+        "_id": "6SIXg9",
+        "score": 76
+    },
+    {
+        "username": "Batia",
+        "password": "$2b$10$vilx5jGo46Qxu3oAxYJAXuiWcn.AOH.ZC8bMEu47Yafr8RzM0w33K",
+        "fullname": "Iritush Hamuda",
+        "_id": "pOzT8x",
+        "score": 98
+    },
+    {
+        "username": "Batiallll",
+        "password": "$2b$10$SxFoYHvwfpZIdjT6pAgBmu7A/nkvAMqUcWxyc4ZWDdjn5uLwn4u1.",
+        "fullname": "Iritush Hamuda",
+        "_id": "p8Nk3P",
+        "score": 96
     }
 ]

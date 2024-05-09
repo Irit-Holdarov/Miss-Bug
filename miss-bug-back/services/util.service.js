@@ -6,7 +6,8 @@ const { https } = fr
 export const utilService = {
     download,
     readJsonFile,
-    makeId
+    makeId,
+    generateRandomScore
 }
 
 function download(url, fileName) {
@@ -40,4 +41,9 @@ function makeId(length = 6) {
 
     return txt
 }
+
+
+function generateRandomScore() {
+    return Math.floor(Math.random() * 101);
+  }
 

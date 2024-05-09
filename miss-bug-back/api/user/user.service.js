@@ -8,7 +8,8 @@ export const userService = {
   query,
   getById,
   remove,
-  save
+  save,
+  getByUserName
 }
 
 async function query() {
@@ -51,6 +52,7 @@ async function save(userToSave) {
       users[idx] = userToSave
     } else {
       userToSave._id = utilService.makeId()
+      userToSave.score = utilService.generateRandomScore()
       users.push(userToSave)
     }
     await _saveUsersToFile()
@@ -59,6 +61,11 @@ async function save(userToSave) {
     loggerService.error(`Could'nt save user`, error)
     throw error
   }
+}
+
+async function getByUserName(username){
+  const user = users.find(user => user.username === username)
+  return user
 }
 
 

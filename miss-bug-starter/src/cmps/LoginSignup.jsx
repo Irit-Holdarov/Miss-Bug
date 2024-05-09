@@ -21,13 +21,8 @@ export function LoginSignup() {
 
   function handleChange({ target }) {
     const field = target.name
-    let type = target.type
     let value = target.value
-
-    if (type === 'number') {
-      value = +value || ''
-    }
-
+    
     setCredentials(prevCredentials => ({ ...prevCredentials, [field]: value }))
   }
 
@@ -105,14 +100,6 @@ export function LoginSignup() {
             name="password"
             value={credentials.password}
             placeholder="Password"
-            onChange={handleChange}
-            required
-          />
-          <input
-            type="number"
-            name="score"
-            value={credentials.score}
-            placeholder="Score"
             onChange={handleChange}
             required
           />
