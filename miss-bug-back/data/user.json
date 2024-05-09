@@ -33,12 +33,5 @@
       "username": "mike",
       "password": "mike1234",
       "score": 85
-    },
-    {
-      "_id": "u106",
-      "fullname": "Sophia Williams",
-      "username": "sophia",
-      "password": "sophia1234",
-      "score": 90
     }
   ]

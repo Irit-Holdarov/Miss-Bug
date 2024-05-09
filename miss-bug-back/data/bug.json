@@ -1,98 +1,123 @@
 [
     {
-        "_id": "b102",
-        "title": "Login button not responsive",
-        "severity": 8,
-        "description": "User interface issue where the login button is not clickable.",
-        "labels": [
-            "critical",
-            "user-input",
-            "need-CR"
-        ],
-        "editAt": 1715154495842
+      "_id": "b101",
+      "title": "Cannot save a Car",
+      "severity": 3,
+      "createdAt": 1542107359454,
+      "description": "Error occurs when attempting to save a car record.",
+      "labels": ["critical", "backend-error", "data-loss"],
+      "creator": {
+        "_id": "u101",
+        "fullname": "Muki Ja"
+      }
     },
     {
-        "_id": "b104",
-        "title": "Payment processing error",
-        "severity": 4,
-        "createdAt": 1619320754000,
-        "description": "Error occurs during payment processing, preventing transactions.",
-        "labels": [
-            "backend-error",
-            "data-loss",
-            "critical"
-        ]
+      "_id": "b102",
+      "title": "Login button not responsive",
+      "severity": 2,
+      "createdAt": 1621456432109,
+      "description": "User interface issue where the login button is not clickable.",
+      "labels": ["critical", "user-input", "need-CR"],
+      "creator": {
+        "_id": "u102",
+        "fullname": "John Doe"
+      }
     },
     {
-        "_id": "b105",
-        "title": "Database connection timeout",
-        "severity": 5,
-        "createdAt": 1602789512000,
-        "description": "Application fails to establish a connection to the database.",
-        "labels": [
-            "critical",
-            "backend-error",
-            "data-loss"
-        ]
+      "_id": "b103",
+      "title": "Missing product images",
+      "severity": 3,
+      "createdAt": 1637825398000,
+      "description": "Product images are not displayed on the product details page.",
+      "labels": ["loading-time", "user-input", "need-CR"],
+      "creator": {
+        "_id": "u103",
+        "fullname": "Alice Smith"
+      }
     },
     {
-        "_id": "b106",
-        "title": "Incorrect billing address validation",
-        "severity": 2,
-        "createdAt": 1645237890000,
-        "description": "Incorrect validation logic for billing addresses, causing errors during checkout.",
-        "labels": [
-            "user-input",
-            "backend-error",
-            "delete-operation"
-        ]
+      "_id": "b104",
+      "title": "Payment processing error",
+      "severity": 4,
+      "createdAt": 1619320754000,
+      "description": "Error occurs during payment processing, preventing transactions.",
+      "labels": ["backend-error", "data-loss", "critical"],
+      "creator": {
+        "_id": "u102",
+        "fullname": "John Doe"
+      }
     },
     {
-        "_id": "b107",
-        "title": "Can't delete the car",
-        "severity": 2,
-        "createdAt": 1625894321000,
-        "description": "User is unable to delete a car record from the system.",
-        "labels": [
-            "delete-operation",
-            "critical",
-            "user-input"
-        ]
+      "_id": "b105",
+      "title": "Database connection timeout",
+      "severity": 5,
+      "createdAt": 1602789512000,
+      "description": "Application fails to establish a connection to the database.",
+      "labels": ["critical", "backend-error", "data-loss"],
+      "creator": {
+        "_id": "u105",
+        "fullname": "Mike Johnson"
+      }
     },
     {
-        "_id": "b108",
-        "title": "Email notifications not being sent",
-        "severity": 4,
-        "createdAt": 1630876543000,
-        "description": "Email notifications fail to send to users upon specific events.",
-        "labels": [
-            "critical",
-            "backend-error",
-            "data-loss"
-        ]
+      "_id": "b106",
+      "title": "Incorrect billing address validation",
+      "severity": 2,
+      "createdAt": 1645237890000,
+      "description": "Incorrect validation logic for billing addresses, causing errors during checkout.",
+      "labels": ["user-input", "backend-error", "delete-operation"],
+      "creator": {
+        "_id": "u101",
+        "fullname": "Muki Ja"
+      }
     },
     {
-        "_id": "b109",
-        "title": "Slow page loading times",
-        "severity": 3,
-        "createdAt": 1607543210000,
-        "description": "Pages take an unusually long time to load, affecting user experience.",
-        "labels": [
-            "loading-time",
-            "critical",
-            "need-CR"
-        ]
+      "_id": "b107",
+      "title": "Can't delete the car",
+      "severity": 2,
+      "createdAt": 1625894321000,
+      "description": "User is unable to delete a car record from the system.",
+      "labels": ["delete-operation", "critical", "user-input"],
+      "creator": {
+        "_id": "u104",
+        "fullname": "Emily Brown"
+      }
     },
     {
-        "_id": "b110",
-        "title": "File upload failing",
-        "severity": 3,
-        "createdAt": 1642801098000,
-        "description": "File uploads fail to complete successfully, interrupting user tasks.",
-        "labels": [
-            "delete-operation",
-            "user-input",
-            "need-CR"
-        ]
+      "_id": "b108",
+      "title": "Email notifications not being sent",
+      "severity": 4,
+      "createdAt": 1630876543000,
+      "description": "Email notifications fail to send to users upon specific events.",
+      "labels": ["critical", "backend-error", "data-loss"],
+      "creator": {
+        "_id": "u102",
+        "fullname": "John Doe"
+      }
+    },
+    {
+      "_id": "b109",
+      "title": "Slow page loading times",
+      "severity": 3,
+      "createdAt": 1607543210000,
+      "description": "Pages take an unusually long time to load, affecting user experience.",
+      "labels": ["loading-time", "critical", "need-CR"],
+      "creator": {
+        "_id": "u105",
+        "fullname": "Mike Johnson"
+      }
+    },
+    {
+      "_id": "b110",
+      "title": "File upload failing",
+      "severity": 3,
+      "createdAt": 1642801098000,
+      "description": "File uploads fail to complete successfully, interrupting user tasks.",
+      "labels": ["delete-operation", "user-input", "need-CR"],
+      "creator": {
+        "_id": "u104",
+        "fullname": "Emily Brown"
+      }
     }
-]
+  ]
+  
