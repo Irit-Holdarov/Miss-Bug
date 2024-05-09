@@ -1,7 +1,8 @@
+import { authService } from "../auth/auth.service.js"
 import { bugService } from "./bug.service.js"
 
 
- export async function getBugs(req, res) {
+export async function getBugs(req, res) {
   const { txt, severity, label, sortBy } = req.query
   const filterBy = { txt, severity: +severity, label, sortBy }
 
@@ -15,7 +16,7 @@ import { bugService } from "./bug.service.js"
 }
 
 
- export async function getBug(req, res) {
+export async function getBug(req, res) {
   try {
     const bugId = req.params.bugId
 
@@ -36,9 +37,13 @@ import { bugService } from "./bug.service.js"
   }
 }
 
- export async function removeBug (req, res) {
+export async function removeBug(req, res) {
+  const { bugId } = req.params
+
+  const loggedinUser = authService.validateToken(req.cookies.loginToken)
+  if (!loggedinUser) return res.status(401).send('Not authenticated')
+
   try {
-    const bugId = req.params.bugId
     await bugService.remove(bugId)
     res.send('deleted')
   } catch (error) {
@@ -48,9 +53,13 @@ import { bugService } from "./bug.service.js"
 }
 
 
- export async function updateBug (req, res) {  //update bug
+export async function updateBug(req, res) {  //update bug
   const { _id, title, severity, description, labels } = req.body
   let bugToSave = { _id, title, severity: +severity, description, labels }
+
+  const loggedinUser = authService.validateToken(req.cookies.loginToken)
+  if (!loggedinUser) return res.status(401).send('Not authenticated')
+
   try {
     bugToSave = await bugService.save(bugToSave)
     res.send(bugToSave)
@@ -64,6 +73,10 @@ import { bugService } from "./bug.service.js"
 export async function addBug(req, res) {
   const { title, severity, description, labels } = req.body
   let bugToSave = { title, severity: +severity, description, labels }
+
+  const loggedinUser = authService.validateToken(req.cookies.loginToken)
+  if (!loggedinUser) return res.status(401).send('Not authenticated')
+    
   try {
     bugToSave = await bugService.save(bugToSave)
     res.send(bugToSave)

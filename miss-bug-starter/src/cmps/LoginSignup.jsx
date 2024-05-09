@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
-import { userService } from '../services/user.service'
+import { userService } from '../services/user.service.js'
 
-export function LoginSignup() {
+export function LoginSignup({ onSignup, onLogin }) {
   const [users, setUsers] = useState([])
   const [credentials, setCredentials] = useState(userService.getEmptyUser())
   const [isSignup, setIsSignup] = useState(false)
@@ -15,96 +15,88 @@ export function LoginSignup() {
       const users = await userService.query()
       setUsers(users)
     } catch (err) {
-      console.log('err:', err)
+      console.log('Had issues loading users', err);
     }
   }
 
-  function handleChange({ target }) {
-    const field = target.name
-    let value = target.value
-    
+  function clearState() {
+    setCredentials(userService.getEmptyUser())
+    setIsSignup(false)
+  }
+
+  function handleChange(ev) {
+    const field = ev.target.name
+    const value = ev.target.value
     setCredentials(prevCredentials => ({ ...prevCredentials, [field]: value }))
   }
 
+  async function onSubmitForm(ev = null) {
+    if (ev) ev.preventDefault()
+    if (isSignup) {
+      if (!credentials.username || !credentials.password || !credentials.fullname) return
+      await onSignup(credentials)
+    } else {
+      if (!credentials.username) return
+      await onLogin(credentials)
+    }
+    clearState()
+  }
 
   function toggleSignup() {
     setIsSignup(prevIsSignup => !prevIsSignup)
   }
 
-  async function onAddUser() {
-    const user = {
-      fullname: credentials.fullname,
-      username: credentials.username,
-      password: credentials.password,
-      score: credentials.score,
-    }
-    try {
-      const savedUser = await userService.save(user)
-      console.log('Added user', savedUser)
-      setUsers(prevUsers => [...prevUsers, savedUser])
-      showSuccessMsg('User added')
-    } catch (err) {
-      console.log('Error from onAddUser ->', err)
-      showErrorMsg('Cannot add user')
-    }
-  }
-
-
 
   return (
     <div className="login-page">
-      <p>
-        <button className="btn-link" onClick={toggleSignup}>{!isSignup ? 'Signup' : 'Login'}</button>
-      </p>
-
-      {!isSignup && (
-        <>
-          <select
-            name="fullname" // Update the name attribute
-            value={credentials.fullname} // Set value to credentials.fullname
-            onChange={handleChange}
-          >
-            <option value="">Select User</option>
-            {users.map(user => (
-              <option key={user._id} value={user.fullname}>
+      <button className="btn-link" onClick={toggleSignup}>{!isSignup ? 'Not a user? Signup' : 'Already a user? Login'}</button>
+      {!isSignup && <form className="login-form" onSubmit={onSubmitForm}>
+        <select
+          name="username"
+          value={credentials.username}
+          onChange={handleChange}
+        >
+          <option value="">Select User</option>
+          {
+            users.map(user =>
+              <option key={user._id} value={user.username}>
                 {user.fullname}
-              </option>
-            ))}
-          </select>
-          <button>Login!</button>
-        </>
-      )}
-
-
+              </option>)
+          }
+        </select>
+        <button>Login!</button>
+      </form>}
 
       <div className="signup-section">
-        {isSignup && <form className="signup-form" onSubmit={onAddUser}>
-          <input
-            type="text"
-            name="fullname"
-            value={credentials.fullname}
-            placeholder="Fullname"
-            onChange={handleChange}
-            required
-          />
-          <input
-            type="text"
-            name="username"
-            value={credentials.username}
-            placeholder="Username"
-            onChange={handleChange}
-            required
-          />
-          <input
-            type="password"
-            name="password"
-            value={credentials.password}
-            placeholder="Password"
-            onChange={handleChange}
-            required
-          />
-          <button >Signup!</button>
-        </form>}
+        {
+          isSignup && <form className="signup-form" onSubmit={onSubmitForm}>
+            <input
+              type="text"
+              name="fullname"
+              value={credentials.fullname}
+              placeholder="Fullname"
+              onChange={handleChange}
+              required
+            />
+            <input
+              type="text"
+              name="username"
+              value={credentials.username}
+              placeholder="Username"
+              onChange={handleChange}
+              required
+            />
+            <input
+              type="password"
+              name="password"
+              value={credentials.password}
+              placeholder="Password"
+              onChange={handleChange}
+              required
+            />
+            <button >Signup!</button>
+          </form>
+        }
       </div>
     </div>
   )

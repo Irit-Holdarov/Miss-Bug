@@ -12,18 +12,6 @@
         "editAt": 1715154495842
     },
     {
-        "_id": "b103",
-        "title": "Missing product images",
-        "severity": 3,
-        "createdAt": 1637825398000,
-        "description": "Product images are not displayed on the product details page.",
-        "labels": [
-            "loading-time",
-            "user-input",
-            "need-CR"
-        ]
-    },
-    {
         "_id": "b104",
         "title": "Payment processing error",
         "severity": 4,

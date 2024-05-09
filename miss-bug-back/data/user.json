@@ -1,86 +1,44 @@
 [
     {
-        "_id": "u101",
-        "fullname": "Muki Ja",
-        "username": "muki",
-        "password": "muki1234",
-        "score": 50
+      "_id": "u101",
+      "fullname": "Muki Ja",
+      "username": "muki",
+      "password": "muki1234",
+      "score": 100
     },
     {
-        "_id": "u103",
-        "fullname": "Alice Smith",
-        "username": "alice",
-        "password": "alice1234",
-        "score": 95
+      "_id": "u102",
+      "fullname": "John Doe",
+      "username": "john",
+      "password": "john1234",
+      "score": 80
     },
     {
-        "_id": "u104",
-        "fullname": "Emily Brown",
-        "username": "emily",
-        "password": "emily1234",
-        "score": 75
+      "_id": "u103",
+      "fullname": "Alice Smith",
+      "username": "alice",
+      "password": "alice1234",
+      "score": 95
     },
     {
-        "_id": "u105",
-        "fullname": "Mike Johnson",
-        "username": "mike",
-        "password": "mike1234",
-        "score": 85
+      "_id": "u104",
+      "fullname": "Emily Brown",
+      "username": "emily",
+      "password": "emily1234",
+      "score": 75
     },
     {
-        "_id": "u106",
-        "fullname": "Sophia Williams",
-        "username": "sophia",
-        "password": "sophia1234",
-        "score": 90
+      "_id": "u105",
+      "fullname": "Mike Johnson",
+      "username": "mike",
+      "password": "mike1234",
+      "score": 85
     },
     {
-        "fullname": "irit",
-        "username": "hol",
-        "password": "123",
-        "score": 7,
-        "_id": "e1Pyqp"
-    },
-    {
-        "fullname": "Muki Ja",
-        "username": "muki_ja",
-        "password": "1234",
-        "score": 7,
-        "_id": "IY4sBP"
-    },
-    {
-        "fullname": "Alice Smith",
-        "username": "5",
-        "password": "12",
-        "score": 5,
-        "_id": "TGvwJI"
-    },
-    {
-        "username": "Iritush",
-        "password": "$2b$10$7WWtT9H/Be/cVFAvXx/c5eHRyFeJWIZNQ3kP8SvS2w0bhaIy4gETS",
-        "fullname": "Iritush Hamuda",
-        "_id": "j441aR",
-        "score": 49
-    },
-    {
-        "username": "Irit",
-        "password": "$2b$10$SDHaNgQN1Y9tnSpNZ4if6uAVSW6d7fNEgdKK4ohxZHR2gpF56dYAi",
-        "fullname": "Iritush Hamuda",
-        "_id": "6SIXg9",
-        "score": 76
-    },
-    {
-        "username": "Batia",
-        "password": "$2b$10$vilx5jGo46Qxu3oAxYJAXuiWcn.AOH.ZC8bMEu47Yafr8RzM0w33K",
-        "fullname": "Iritush Hamuda",
-        "_id": "pOzT8x",
-        "score": 98
-    },
-    {
-        "username": "Batiallll",
-        "password": "$2b$10$SxFoYHvwfpZIdjT6pAgBmu7A/nkvAMqUcWxyc4ZWDdjn5uLwn4u1.",
-        "fullname": "Iritush Hamuda",
-        "_id": "p8Nk3P",
-        "score": 96
+      "_id": "u106",
+      "fullname": "Sophia Williams",
+      "username": "sophia",
+      "password": "sophia1234",
+      "score": 90
     }
-]
+  ]

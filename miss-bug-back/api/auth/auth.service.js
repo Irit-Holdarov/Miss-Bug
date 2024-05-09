@@ -19,10 +19,11 @@ async function login(username, password) {
   const user = await userService.getByUserName(username)
   if (!user) throw new Error('Invalid username or password')
 
-  const match = await bcrypt.compare(password, user.password)
-  if (!match) throw new Error('Invalid username or password')
 
-  // delete user
+    //un-comment for real login
+  // const match = await bcrypt.compare(password, user.password)
+  // if (!match) throw new Error('Invalid username or password')
+
   const minUser = {
     _id: user._id,
     fullname: user.fullname,

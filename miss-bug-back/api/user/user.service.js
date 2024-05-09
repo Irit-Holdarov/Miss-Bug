@@ -53,6 +53,7 @@ async function save(userToSave) {
     } else {
       userToSave._id = utilService.makeId()
       userToSave.score = utilService.generateRandomScore()
+      userToSave.creatAt = Date.now()
       users.push(userToSave)
     }
     await _saveUsersToFile()
