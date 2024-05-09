@@ -35,10 +35,24 @@
         "score": 90
     },
     {
-        "fullname": "Irit Holdarov",
-        "username": "Irit",
-        "password": "1233",
-        "score": 80,
-        "_id": "iHahI1"
+        "fullname": "irit",
+        "username": "hol",
+        "password": "123",
+        "score": 7,
+        "_id": "e1Pyqp"
+    },
+    {
+        "fullname": "Muki Ja",
+        "username": "muki_ja",
+        "password": "1234",
+        "score": 7,
+        "_id": "IY4sBP"
+    },
+    {
+        "fullname": "Alice Smith",
+        "username": "5",
+        "password": "12",
+        "score": 5,
+        "_id": "TGvwJI"
     }
 ]

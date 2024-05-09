@@ -7,10 +7,10 @@ export function UserIndex() {
   const [users, setUsers] = useState([])
 
   useEffect(() => {
-    fetchData()
+    loadUsers()
   }, [])
 
-  async function fetchData() {
+  async function loadUsers() {
     try {
       const users = await userService.query()
       setUsers(users)

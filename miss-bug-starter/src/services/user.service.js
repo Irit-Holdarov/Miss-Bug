@@ -11,6 +11,7 @@ export const userService = {
     getById,
     save,
     remove,
+    getEmptyUser
 }
 
 async function query() {
@@ -31,5 +32,14 @@ async function save(user) {
     const method = user._id ? 'put' : 'post'
     const { data: savedUser } = await axios[method](BASE_URL + (user._id || ''), user)
     return savedUser
+}
+
+function getEmptyUser() {
+	return {
+		username: '',
+		fullname: '',
+		password: '',
+		score: '',
+	}
 }
 
