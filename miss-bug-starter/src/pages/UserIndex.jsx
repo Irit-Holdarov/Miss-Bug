@@ -49,29 +49,12 @@ export function UserIndex() {
     }
   }
 
-  async function onEditUser(user) {
-    const score = +prompt('New score?')
-    const userToSave = { ...user, score }
-    try {
-
-      const savedUser = await userService.save(userToSave)
-      console.log('Updated user:', savedUser)
-      setUsers(prevUsers => prevUsers.map((currUser) =>
-        currUser._id === savedUser._id ? savedUser : currUser
-      ))
-      showSuccessMsg('User updated')
-    } catch (err) {
-      console.log('Error from onEditUser ->', err)
-      showErrorMsg('Cannot update user')
-    }
-  }
-
   return (
     <main className="user-index">
       <h3>Users App</h3>
       <main>
         <button className='add-btn' onClick={onAddUser}>Add user</button>
-        <UserList users={users} onRemoveUser={onRemoveUser} onEditUser={onEditUser} />
+        <UserList users={users} onRemoveUser={onRemoveUser} />
       </main>
     </main>
   )

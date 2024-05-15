@@ -9,6 +9,8 @@ import { UserDetails } from './pages/UserDetails.jsx'
 import { AboutUs } from './pages/AboutUs.jsx'
 import { Route, HashRouter as Router, Routes } from 'react-router-dom'
 import { UserMsg } from './cmps/UserMsg.jsx'
+import { RouteGuard } from './cmps/RouteGuard.jsx'
+
 
 export function App() {
     return (
@@ -19,10 +21,18 @@ export function App() {
                     <Routes>
                         <Route path='/' element={<Home />} />
                         <Route path='/bug' element={<BugIndex />} />
-                        <Route path='/user' element={<UserIndex />} />
+                        <Route path='/user' element={
+                            <RouteGuard>
+                                <UserIndex />
+                            </RouteGuard>
+                        } />
                         <Route path='/bug/:bugId' element={<BugDetails />} />
                         <Route path='/user/:userId' element={<UserDetails />} />
-                        <Route path='/about' element={<AboutUs />} />
+                        <Route path='/about' element={
+                            <RouteGuard>
+                                <AboutUs />
+                            </RouteGuard>
+                        } />
                     </Routes>
                 </main>
                 <AppFooter />

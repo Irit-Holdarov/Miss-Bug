@@ -36,10 +36,18 @@ export function BugIndex() {
   }
 
   async function onAddBug() {
+    const title = prompt('Bug title?')
+    const severity = +prompt('Bug severity?')
+    const description = prompt('Bug description?')
+    const labelsInput = prompt('Enter up to 3 labels (comma-separated):')
+  
+    const labels = labelsInput.split(',').map(label => label.trim()).filter(label => label !== '').slice(0, 3)
+  
     const bug = {
-      title: prompt('Bug title?'),
-      severity: +prompt('Bug severity?'),
-      description: prompt('Bug description?')
+      title,
+      severity,
+      description,
+      labels
     }
     try {
       const savedBug = await bugService.save(bug)

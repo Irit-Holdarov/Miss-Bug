@@ -1,19 +1,19 @@
 [
   {
-    "_id": "u101",
-    "fullname": "Muki Ja",
-    "username": "muki",
-    "password": "muki1234",
-    "score": 100,
-    "isAdmin": false
-  },
-  {
     "_id": "u102",
     "fullname": "Master Admin",
     "username": "Admin",
     "password": "1234",
     "score": 80,
     "isAdmin": true
+  },
+  {
+    "_id": "u101",
+    "fullname": "Muki Ja",
+    "username": "muki",
+    "password": "muki1234",
+    "score": 100,
+    "isAdmin": false
   },
   {
     "_id": "u103",
