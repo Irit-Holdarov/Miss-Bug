@@ -1,3 +1,4 @@
+import { loggerService } from "../../services/logger.service.js"
 import { authService } from "../auth/auth.service.js"
 import { bugService } from "./bug.service.js"
 
@@ -10,7 +11,7 @@ export async function getBugs(req, res) {
     const bugs = await bugService.query(filterBy)
     res.send(bugs)
   } catch (error) {
-    res.status(400).send(`Could'nt get bugs`)
+    res.status(400).send(`Could'nt get bugs ${error}`)
     loggerService.error(`Could'nt get bugs`, error)
   }
 }
@@ -31,7 +32,7 @@ export async function getBug(req, res) {
     if (error.message === 'bugLimit Reached') {
       res.status(401).send('Wait for a bit')
     } else {
-      res.status(400).send(`Could'nt get bug`)
+      res.status(400).send(`Could'nt get bug ${error}`)
       loggerService.error(`Could'nt get bug`, error)
     }
   }
@@ -44,10 +45,10 @@ export async function removeBug(req, res) {
   if (!loggedinUser) return res.status(401).send('Not authenticated')
 
   try {
-    await bugService.remove(bugId)
-    res.send('deleted')
+    await bugService.remove(bugId, loggedinUser)
+    res.send('Deleted OK')
   } catch (error) {
-    res.status(400).send(`Could'nt delete bug`)
+    res.status(400).send(`Could'nt delete bug ${error}`)
     loggerService.error(`Could'nt delete bug`, error)
   }
 }
@@ -61,11 +62,11 @@ export async function updateBug(req, res) {  //update bug
   if (!loggedinUser) return res.status(401).send('Not authenticated')
 
   try {
-    bugToSave = await bugService.save(bugToSave)
+    bugToSave = await bugService.save(bugToSave, loggedinUser)
     res.send(bugToSave)
   }
   catch (error) {
-    res.status(400).send(`Could'nt save bug`)
+    res.status(400).send(`Could'nt save bug ${error}`)
     loggerService.error(`Could'nt save bug`, error)
   }
 }
@@ -78,11 +79,11 @@ export async function addBug(req, res) {
   if (!loggedinUser) return res.status(401).send('Not authenticated')
     
   try {
-    bugToSave = await bugService.save(bugToSave)
+    bugToSave = await bugService.save(bugToSave, loggedinUser)
     res.send(bugToSave)
   }
   catch (error) {
-    res.status(400).send(`Could'nt save bug`)
+    res.status(400).send(`Could'nt save bug : ${error}`)
     loggerService.error(`Could'nt save bug`, error)
   }
 }
