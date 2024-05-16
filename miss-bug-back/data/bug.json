@@ -1,163 +1,123 @@
 [
     {
-        "_id": "b101",
-        "title": "Cannot save a Bug",
-        "severity": 3,
-        "createdAt": 1542107359454,
-        "description": "Error occurs when attempting to save a bug record.",
-        "labels": [
-            "critical",
-            "backend-error",
-            "data-loss"
-        ],
-        "creator": {
-            "_id": "u101",
-            "fullname": "Muki Ja"
-        }
+      "_id": "b101",
+      "title": "Cannot save a Bug",
+      "severity": 3,
+      "createdAt": 1542107359454,
+      "description": "Error occurs when attempting to save a bug record.",
+      "labels": ["critical", "backend-error", "data-loss"],
+      "creator": {
+        "_id": "u101",
+        "fullname": "Muki Ja"
+      }
     },
     {
-        "_id": "b102",
-        "title": "Login button not responsive",
-        "severity": 2,
-        "createdAt": 1621456432109,
-        "description": "User interface issue where the login button is not clickable.",
-        "labels": [
-            "critical",
-            "user-input",
-            "need-CR"
-        ],
-        "creator": {
-            "_id": "u102",
-            "fullname": "Master Admin"
-        }
+      "_id": "b102",
+      "title": "Login button not responsive",
+      "severity": 2,
+      "createdAt": 1621456432109,
+      "description": "User interface issue where the login button is not clickable.",
+      "labels": ["critical", "user-input", "need-CR"],
+      "creator": {
+        "_id": "u102",
+        "fullname": "Master Admin"
+      }
     },
     {
-        "_id": "b103",
-        "title": "Missing product images",
-        "severity": 3,
-        "createdAt": 1637825398000,
-        "description": "Product images are not displayed on the product details page.",
-        "labels": [
-            "loading-time",
-            "user-input",
-            "need-CR"
-        ],
-        "creator": {
-            "_id": "u103",
-            "fullname": "Alice Smith"
-        }
+      "_id": "b103",
+      "title": "Missing product images",
+      "severity": 3,
+      "createdAt": 1637825398000,
+      "description": "Product images are not displayed on the product details page.",
+      "labels": ["loading-time", "user-input", "need-CR"],
+      "creator": {
+        "_id": "u103",
+        "fullname": "Alice Smith"
+      }
     },
     {
-        "_id": "b104",
-        "title": "Payment processing error",
-        "severity": 4,
-        "createdAt": 1619320754000,
-        "description": "Error occurs during payment processing, preventing transactions.",
-        "labels": [
-            "backend-error",
-            "data-loss",
-            "critical"
-        ],
-        "creator": {
-            "_id": "u102",
-            "fullname": "Master Admin"
-        }
+      "_id": "b104",
+      "title": "Payment processing error",
+      "severity": 4,
+      "createdAt": 1619320754000,
+      "description": "Error occurs during payment processing, preventing transactions.",
+      "labels": ["backend-error", "data-loss", "critical"],
+      "creator": {
+        "_id": "u102",
+        "fullname": "Master Admin"
+      }
     },
     {
-        "_id": "b105",
-        "title": "Database connection timeout",
-        "severity": 5,
-        "createdAt": 1602789512000,
-        "description": "Application fails to establish a connection to the database.",
-        "labels": [
-            "critical",
-            "backend-error",
-            "data-loss"
-        ],
-        "creator": {
-            "_id": "u105",
-            "fullname": "Mike Johnson"
-        }
+      "_id": "b105",
+      "title": "Database connection timeout",
+      "severity": 5,
+      "createdAt": 1602789512000,
+      "description": "Application fails to establish a connection to the database.",
+      "labels": ["critical", "backend-error", "data-loss"],
+      "creator": {
+        "_id": "u105",
+        "fullname": "Mike Johnson"
+      }
     },
     {
-        "_id": "b106",
-        "title": "Incorrect billing address validation",
-        "severity": 2,
-        "createdAt": 1645237890000,
-        "description": "Incorrect validation logic for billing addresses, causing errors during checkout.",
-        "labels": [
-            "user-input",
-            "backend-error",
-            "delete-operation"
-        ],
-        "creator": {
-            "_id": "u101",
-            "fullname": "Muki Ja"
-        }
+      "_id": "b106",
+      "title": "Incorrect billing address validation",
+      "severity": 2,
+      "createdAt": 1645237890000,
+      "description": "Incorrect validation logic for billing addresses, causing errors during checkout.",
+      "labels": ["user-input", "backend-error", "delete-operation"],
+      "creator": {
+        "_id": "u101",
+        "fullname": "Muki Ja"
+      }
     },
     {
-        "_id": "b107",
-        "title": "Can't delete the bug",
-        "severity": 2,
-        "createdAt": 1625894321000,
-        "description": "User is unable to delete a bug record from the system.",
-        "labels": [
-            "delete-operation",
-            "critical",
-            "user-input"
-        ],
-        "creator": {
-            "_id": "u104",
-            "fullname": "Emily Brown"
-        }
+      "_id": "b107",
+      "title": "Can't delete the bug",
+      "severity": 2,
+      "createdAt": 1625894321000,
+      "description": "User is unable to delete a bug record from the system.",
+      "labels": ["delete-operation", "critical", "user-input"],
+      "creator": {
+        "_id": "u104",
+        "fullname": "Emily Brown"
+      }
     },
     {
-        "_id": "b108",
-        "title": "Email notifications not being sent",
-        "severity": 4,
-        "createdAt": 1630876543000,
-        "description": "Email notifications fail to send to users upon specific events.",
-        "labels": [
-            "critical",
-            "backend-error",
-            "data-loss"
-        ],
-        "creator": {
-            "_id": "u102",
-            "fullname": "Master Admin"
-        }
+      "_id": "b108",
+      "title": "Email notifications not being sent",
+      "severity": 4,
+      "createdAt": 1630876543000,
+      "description": "Email notifications fail to send to users upon specific events.",
+      "labels": ["critical", "backend-error", "data-loss"],
+      "creator": {
+        "_id": "u102",
+        "fullname": "Master Admin"
+      }
     },
     {
-        "_id": "b109",
-        "title": "Slow page loading times",
-        "severity": 3,
-        "createdAt": 1607543210000,
-        "description": "Pages take an unusually long time to load, affecting user experience.",
-        "labels": [
-            "loading-time",
-            "critical",
-            "need-CR"
-        ],
-        "creator": {
-            "_id": "u105",
-            "fullname": "Mike Johnson"
-        }
+      "_id": "b109",
+      "title": "Slow page loading times",
+      "severity": 3,
+      "createdAt": 1607543210000,
+      "description": "Pages take an unusually long time to load, affecting user experience.",
+      "labels": ["loading-time", "critical", "need-CR"],
+      "creator": {
+        "_id": "u105",
+        "fullname": "Mike Johnson"
+      }
     },
     {
-        "_id": "b110",
-        "title": "File upload failing",
-        "severity": 3,
-        "createdAt": 1642801098000,
-        "description": "File uploads fail to complete successfully, interrupting user tasks.",
-        "labels": [
-            "delete-operation",
-            "user-input",
-            "need-CR"
-        ],
-        "creator": {
-            "_id": "u104",
-            "fullname": "Emily Brown"
-        }
+      "_id": "b110",
+      "title": "File upload failing",
+      "severity": 3,
+      "createdAt": 1642801098000,
+      "description": "File uploads fail to complete successfully, interrupting user tasks.",
+      "labels": ["delete-operation", "user-input", "need-CR"],
+      "creator": {
+        "_id": "u104",
+        "fullname": "Emily Brown"
+      }
     },
     {
         "_id": "b111",
@@ -165,75 +125,59 @@
         "severity": 2,
         "createdAt": 1646357800000,
         "description": "Users are unable to find desired items using the search feature.",
-        "labels": [
-            "user-input",
-            "need-CR"
-        ],
+        "labels": ["user-input", "need-CR"],
         "creator": {
-            "_id": "u103",
-            "fullname": "Alice Smith"
+          "_id": "u103",
+          "fullname": "Alice Smith"
         }
-    },
-    {
+      },
+      {
         "_id": "b112",
         "title": "Broken pagination on product list",
         "severity": 3,
         "createdAt": 1647241000000,
         "description": "Pagination links do not navigate to the correct pages on the product list page.",
-        "labels": [
-            "user-input",
-            "need-CR"
-        ],
+        "labels": ["user-input", "need-CR"],
         "creator": {
-            "_id": "u101",
-            "fullname": "Muki Ja"
+          "_id": "u101",
+          "fullname": "Muki Ja"
         }
-    },
-    {
+      },
+      {
         "_id": "b113",
         "title": "Incorrect pricing displayed",
         "severity": 2,
         "createdAt": 1648243200000,
         "description": "Product prices are shown incorrectly on the checkout page.",
-        "labels": [
-            "user-input",
-            "data-loss"
-        ],
+        "labels": [ "user-input", "data-loss"],
         "creator": {
-            "_id": "u102",
-            "fullname": "Master Admin"
+          "_id": "u102",
+          "fullname": "Master Admin"
         }
-    },
-    {
+      },
+      {
         "_id": "b114",
         "title": "Password reset link expired too soon",
         "severity": 2,
         "createdAt": 1649245400000,
         "description": "Users report that the password reset link sent via email expires before they can use it.",
-        "labels": [
-            "user-input",
-            "backend-error",
-            "loading-time"
-        ],
+        "labels": ["user-input", "backend-error", "loading-time"],
         "creator": {
-            "_id": "u105",
-            "fullname": "Mike Johnson"
+          "_id": "u105",
+          "fullname": "Mike Johnson"
         }
-    },
-    {
+      },
+      {
         "_id": "b115",
         "title": "Mobile app crashes on startup",
         "severity": 4,
         "createdAt": 1650247600000,
         "description": "Users experience crashes immediately upon launching the mobile application.",
-        "labels": [
-            "backend-error",
-            "critical",
-            "loading-time"
-        ],
+        "labels": [ "backend-error", "critical",  "loading-time"],
         "creator": {
-            "_id": "u104",
-            "fullname": "Emily Brown"
+          "_id": "u104",
+          "fullname": "Emily Brown"
         }
-    }
-]
+      }
+  ]
+  

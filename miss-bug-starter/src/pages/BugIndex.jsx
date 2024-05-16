@@ -61,8 +61,10 @@ export function BugIndex() {
   }
 
   async function onEditBug(bug) {
-    const severity = +prompt('New severity?')
-    const bugToSave = { ...bug, severity }
+    const title = prompt('New title?') || bug.title
+    const severity = +prompt('New severity?') || bug.severity
+    const description = prompt('New description?') || bug.description
+    const bugToSave = { ...bug, severity, description, title }
     try {
 
       const savedBug = await bugService.save(bugToSave)
@@ -76,6 +78,7 @@ export function BugIndex() {
       showErrorMsg('Cannot update bug')
     }
   }
+
 
   return (
     <main className="bug-index">

@@ -7,8 +7,11 @@ export function BugList({ bugs, onRemoveBug, onEditBug }) {
   const loggedinUser = userService.getLoggedinUser()
 
   function isOwnedByUser(bug) {
-    if (!loggedinUser) return true
-    return bug.creator._id === loggedinUser._id || loggedinUser.isAdmin
+    if (!loggedinUser)
+      return true
+    if (!bug.creator || !bug.creator._id)
+      return false
+    return bug.creator._id === loggedinUser?._id || loggedinUser?.isAdmin
   }
 
   const userBugs = bugs.filter(bug => isOwnedByUser(bug))
@@ -20,7 +23,9 @@ export function BugList({ bugs, onRemoveBug, onEditBug }) {
           <BugPreview bug={bug} />
           <div>
             {loggedinUser && isOwnedByUser(bug) && <button onClick={() => { onRemoveBug(bug._id) }}>x</button>}
-            {loggedinUser && isOwnedByUser(bug) &&<button onClick={() => { onEditBug(bug) }} >Edit</button>}
+            {loggedinUser && isOwnedByUser(bug) && <button onClick={() => { onEditBug(bug) }} >Edit</button>}
+
+
           </div>
           <Link to={`/bug/${bug._id}`}>Details</Link>
         </li>

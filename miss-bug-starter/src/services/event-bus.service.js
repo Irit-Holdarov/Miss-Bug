@@ -28,17 +28,3 @@ export function showErrorMsg(txt) {
 }
 
 
-// Service Testing:
-// eventBus.on('muk', console.log)
-// eventBus.on('puk', console.log)
-// const unsubscribe = eventBus.on('puk', data=>{
-//     console.log('Mee too:', data)
-// })
-
-// setTimeout(()=>{
-//     unsubscribe()
-// }, 5000)
-// eventBus.emit('puk', 'Buuuu!')
-// setTimeout(()=>{
-//     eventBus.emit('puk', 'Buuuu!')
-// }, 5500)

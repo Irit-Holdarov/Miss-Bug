@@ -41,11 +41,8 @@ export async function getBug(req, res) {
 export async function removeBug(req, res) {
   const { bugId } = req.params
 
-  const loggedinUser = authService.validateToken(req.cookies.loginToken)
-  if (!loggedinUser) return res.status(401).send('Not authenticated')
-
   try {
-    await bugService.remove(bugId, loggedinUser)
+    await bugService.remove(bugId, req.loggedinUser)
     res.send('Deleted OK')
   } catch (error) {
     res.status(400).send(`Could'nt delete bug ${error}`)
@@ -58,11 +55,8 @@ export async function updateBug(req, res) {  //update bug
   const { _id, title, severity, description, labels } = req.body
   let bugToSave = { _id, title, severity: +severity, description, labels }
 
-  const loggedinUser = authService.validateToken(req.cookies.loginToken)
-  if (!loggedinUser) return res.status(401).send('Not authenticated')
-
   try {
-    bugToSave = await bugService.save(bugToSave, loggedinUser)
+    bugToSave = await bugService.save(bugToSave, req.loggedinUser)
     res.send(bugToSave)
   }
   catch (error) {
@@ -75,11 +69,8 @@ export async function addBug(req, res) {
   const { title, severity, description, labels } = req.body
   let bugToSave = { title, severity: +severity, description, labels }
 
-  const loggedinUser = authService.validateToken(req.cookies.loginToken)
-  if (!loggedinUser) return res.status(401).send('Not authenticated')
-    
   try {
-    bugToSave = await bugService.save(bugToSave, loggedinUser)
+    bugToSave = await bugService.save(bugToSave, req.loggedinUser)
     res.send(bugToSave)
   }
   catch (error) {
