@@ -25,8 +25,10 @@ export function BugDetails() {
 
         }
     }
-    console.log('bug:', bug)
+
+
     if (!bug) return <h1>loadings....</h1>
+    
     return <div className="bug-details container">
         <h3>Bug Details 🐛</h3>
         <h4>{bug.title}</h4>
