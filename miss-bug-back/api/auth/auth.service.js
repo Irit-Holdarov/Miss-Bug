@@ -27,7 +27,6 @@ async function login(username, password) {
   const minUser = {
     _id: user._id,
     fullname: user.fullname,
-
     isAdmin: user.isAdmin
   }
   return minUser

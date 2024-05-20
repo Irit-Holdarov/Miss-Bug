@@ -1,6 +1,6 @@
 import fs from 'fs'
 import { utilService } from "../../services/util.service.js"
-import { loggerService } from '../../services/logger.service.js'
+import { loggerService } from "../../services/logger.service.js"
 
 const users = utilService.readJsonFile('data/user.json')
 
@@ -64,7 +64,7 @@ async function save(userToSave) {
   }
 }
 
-async function getByUserName(username){
+async function getByUserName(username) {
   const user = users.find(user => user.username === username)
   return user
 }

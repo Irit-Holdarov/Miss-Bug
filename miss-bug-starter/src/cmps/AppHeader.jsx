@@ -1,14 +1,15 @@
 
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import { LoginSignup } from './LoginSignup'
 import { useState } from 'react'
 import { userService } from '../services/user.service'
-import { showErrorMsg, showSuccessMsg  } from '../services/event-bus.service.js'
+import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service.js'
 
 export function AppHeader() {
     const [loggedinUser, setLoggedinUser] = useState(userService.getLoggedinUser())
+    const navigate = useNavigate()
 
-    
+
     async function onLogin(credentials) {
         try {
             const user = await userService.login(credentials)
@@ -35,6 +36,8 @@ export function AppHeader() {
         try {
             await userService.logout()
             setLoggedinUser(null)
+            navigate('/')
+
         } catch (err) {
             console.log('can not logout')
         }
@@ -50,8 +53,8 @@ export function AppHeader() {
 
             <div className='header-container'>
                 <nav className='app-nav'>
-                    <NavLink to="/">Home</NavLink> |<NavLink to="/bug">Bugs</NavLink> 
-                   { isAllowed() && <NavLink to="/user">Users</NavLink> } {isAllowed() &&<NavLink to="/about">About</NavLink>}
+                    <NavLink to="/">Home</NavLink> |<NavLink to="/bug">Bugs</NavLink>
+                    {isAllowed() && <NavLink to="/user">Users</NavLink>} {isAllowed() && <NavLink to="/about">About</NavLink>}
                 </nav>
 
                 <section className="login-signup-container">

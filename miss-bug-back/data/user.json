@@ -1,42 +1,42 @@
 [
     {
-      "_id": "u102",
-      "fullname": "Master Admin",
-      "username": "Admin",
-      "password": "1234",
-      "score": 80,
-      "isAdmin": true
+        "_id": "u102",
+        "fullname": "Master Admin",
+        "username": "Admin",
+        "password": "1234",
+        "score": 80,
+        "isAdmin": true
     },
     {
-      "_id": "u101",
-      "fullname": "Muki Ja",
-      "username": "muki",
-      "password": "muki1234",
-      "score": 100,
-      "isAdmin": false
+        "_id": "u101",
+        "fullname": "Muki Ja",
+        "username": "muki",
+        "password": "muki1234",
+        "score": 100,
+        "isAdmin": false
     },
     {
-      "_id": "u103",
-      "fullname": "Alice Smith",
-      "username": "alice",
-      "password": "alice1234",
-      "score": 95,
-      "isAdmin": false
+        "_id": "u103",
+        "fullname": "Alice Smith",
+        "username": "alice",
+        "password": "alice1234",
+        "score": 95,
+        "isAdmin": false
     },
     {
-      "_id": "u104",
-      "fullname": "Emily Brown",
-      "username": "emily",
-      "password": "emily1234",
-      "score": 75,
-      "isAdmin": false
+        "_id": "u104",
+        "fullname": "Emily Brown",
+        "username": "emily",
+        "password": "emily1234",
+        "score": 75,
+        "isAdmin": false
     },
     {
-      "_id": "u105",
-      "fullname": "Mike Johnson",
-      "username": "mike",
-      "password": "mike1234",
-      "score": 85,
-      "isAdmin": false
+        "_id": "u105",
+        "fullname": "Mike Johnson",
+        "username": "mike",
+        "password": "mike1234",
+        "score": 85,
+        "isAdmin": false
     }
-  ]
+]

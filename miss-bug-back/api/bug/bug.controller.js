@@ -1,5 +1,4 @@
 import { loggerService } from "../../services/logger.service.js"
-import { authService } from "../auth/auth.service.js"
 import { bugService } from "./bug.service.js"
 
 

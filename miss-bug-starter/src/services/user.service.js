@@ -18,6 +18,7 @@ export const userService = {
     getById,
     update,
     remove,
+    save,
     getEmptyUser,
     saveLocalUser,
     getLoggedinUser
@@ -41,6 +42,15 @@ async function update(userToUpdate) {
     const updatedUser = await axios.put(BASE_USER_URL, userToUpdate)
     if (getLoggedinUser().id === updatedUser.id) saveLocalUser(updatedUser)
     return updatedUser
+}
+
+async function save(user) {
+    if (user._id) {
+        return update(user)
+    } else {
+        const { data: newUser } = await axios.post(BASE_USER_URL, user)
+        return newUser
+    }
 }
 
 async function login(credentials) {
