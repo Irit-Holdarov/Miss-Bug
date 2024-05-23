@@ -1,6 +1,12 @@
 import fs from 'fs'
 import { utilService } from "../../services/util.service.js"
 import { loggerService } from "../../services/logger.service.js"
+// import { dbService } from '../../services/db.service.js'
+// import mongobd from 'mongobd'
+// const { ObjectId } = mongobd
+
+// const collectionName = 'user'
+
 
 const users = utilService.readJsonFile('data/user.json')
 
@@ -23,6 +29,7 @@ async function query() {
 
 async function getById(userId) {
   try {
+    // const collection = await dbService.getCollection(collectionName)
     const user = users.find(user => user._id === userId)
     return user
   } catch (error) {

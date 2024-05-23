@@ -1,21 +1,5 @@
 [
     {
-        "_id": "b101",
-        "title": "Cannot save a Bug",
-        "severity": 3,
-        "createdAt": 1542107359454,
-        "description": "Error occurs when attempting to save a bug record.",
-        "labels": [
-            "critical",
-            "backend-error",
-            "data-loss"
-        ],
-        "creator": {
-            "_id": "u101",
-            "fullname": "Muki Ja"
-        }
-    },
-    {
         "_id": "b102",
         "title": "Login button not responsive",
         "severity": 2,
@@ -160,21 +144,6 @@
         }
     },
     {
-        "_id": "b111",
-        "title": "Search functionality not working",
-        "severity": 2,
-        "createdAt": 1646357800000,
-        "description": "Users are unable to find desired items using the search feature.",
-        "labels": [
-            "user-input",
-            "need-CR"
-        ],
-        "creator": {
-            "_id": "u103",
-            "fullname": "Alice Smith"
-        }
-    },
-    {
         "_id": "b112",
         "title": "Broken pagination on product list",
         "severity": 3,
@@ -235,19 +204,5 @@
             "_id": "u104",
             "fullname": "Emily Brown"
         }
-    },
-    {
-        "title": "Irit",
-        "severity": 7,
-        "description": "hi",
-        "labels": [
-            "critical"
-        ],
-        "_id": "pcCpr1",
-        "creator": {
-            "_id": "IM6VDC",
-            "fullname": "Irit Holdarov"
-        },
-        "createdAt": 1716187218261
     }
 ]

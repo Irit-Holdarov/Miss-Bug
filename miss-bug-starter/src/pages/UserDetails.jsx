@@ -40,6 +40,8 @@ export function UserDetails() {
 
     if (!user || !bugs) return <h1>loadings....</h1>
 
+    const userBugs = bugs.filter(bug => bug.creator._id === user._id || user.isAdmin)
+
     return (
         <div className="user-details container">
             <h3>User Details</h3>
@@ -47,19 +49,22 @@ export function UserDetails() {
             <p>Fullname: <span>{user.fullname}</span></p>
             <p>Score: <span>{user.score}</span></p>
 
-            <h3>User Bugs:</h3>
-            <ul className="bug-list">
-                {bugs
-                    .filter(bug => bug.creator._id === user._id || user.isAdmin)
-                    .map(filteredBug => (
-                        <li className="bug-preview" key={filteredBug._id}>
-                            <BugPreview bug={filteredBug} />
-                        </li>
-                    ))}
-            </ul>
+            {userBugs.length > 0 ? (
+                <>
+                    <h3>User Bugs:</h3>
+                    <ul className="bug-list">
+                        {userBugs.map(filteredBug => (
+                            <li className="bug-preview" key={filteredBug._id}>
+                                <BugPreview bug={filteredBug} />
+                            </li>
+                        ))}
+                    </ul>
+                </>
+            ) : (
+                <h3>The user has no bugs</h3>
+            )}
 
             <Link to="/user">Back to List</Link>
         </div>
     )
 }
-

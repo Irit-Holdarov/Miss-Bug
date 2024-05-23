@@ -17,6 +17,9 @@
     "cryptr": "^6.3.0",
     "express": "^4.19.2",
     "follow-redirects": "^1.15.6",
-    "fs": "^0.0.1-security"
+    "fs": "^0.0.1-security",
+    "mongobd": "^0.0.1-security.0",
+    "mongodb": "^6.6.2",
+    "nodemon": "^3.1.0"
   }
 }
